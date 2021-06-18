@@ -1,0 +1,14 @@
+query SearchPy($queryString: String!) {
+  search(query: $queryString, type: USER, first: 10) {
+    userCount
+    edges {
+      node {
+        ... on User {
+          name
+          url
+        }
+      }
+    }
+  }
+}
+
